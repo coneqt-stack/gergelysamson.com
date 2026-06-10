@@ -12,11 +12,13 @@
 
   <style>
     :root {
-      --bg: #191817;
-      --bg2: #25211d;
+      --bg: #26231c;
+      --bg-deep: #1e1c17;
       --text: #f3e7c8;
-      --muted: rgba(243, 231, 200, 0.62);
-      --line: rgba(243, 231, 200, 0.14);
+      --muted: rgba(243, 231, 200, 0.64);
+      --line: rgba(243, 231, 200, 0.16);
+      --link-bg: rgba(243, 231, 200, 0.10);
+      --link-bg-hover: rgba(243, 231, 200, 0.18);
     }
 
     * {
@@ -31,14 +33,14 @@
 
     body {
       background:
-        radial-gradient(circle at 20% 10%, var(--bg2), transparent 34%),
-        radial-gradient(circle at 80% 70%, #2b261f, transparent 38%),
+        radial-gradient(circle at 20% 10%, #343024, transparent 34%),
+        radial-gradient(circle at 85% 75%, #2e281f, transparent 38%),
         var(--bg);
       background-attachment: fixed;
       color: var(--text);
       font-family: "Montserrat", sans-serif;
       line-height: 1.6;
-      animation: bgShift 18s ease-in-out infinite alternate;
+      animation: bgShift 22s ease-in-out infinite alternate;
     }
 
     @keyframes bgShift {
@@ -56,9 +58,14 @@
       padding: 64px 28px;
     }
 
+    h1,
+    .section-title {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+    }
+
     h1 {
       font-size: clamp(3rem, 9vw, 6rem);
-      font-weight: 600;
       letter-spacing: -0.06em;
       line-height: 0.95;
       margin-bottom: 28px;
@@ -74,15 +81,44 @@
       font-weight: 400;
     }
 
-    .pattern-strip {
+    .pattern-wrap {
+      position: relative;
       width: 100vw;
       height: 220px;
       margin-bottom: 120px;
+      overflow: hidden;
+    }
 
+    .pattern-wrap::before,
+    .pattern-wrap::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .pattern-wrap::before {
+      top: 0;
+      background: linear-gradient(to bottom, var(--bg) 0%, rgba(38,35,28,0) 100%);
+    }
+
+    .pattern-wrap::after {
+      bottom: 0;
+      background: linear-gradient(to top, var(--bg) 0%, rgba(38,35,28,0) 100%);
+    }
+
+    .pattern-strip {
+      width: 100%;
+      height: 100%;
       background-image: url("IMG_2291.jpeg");
       background-size: auto 220px;
       background-repeat: repeat-x;
       background-position: center;
+      filter: saturate(0.82) contrast(0.92) brightness(0.88);
+      opacity: 0.92;
     }
 
     section {
@@ -95,7 +131,6 @@
       text-transform: uppercase;
       color: var(--text);
       margin-bottom: 40px;
-      font-weight: 600;
     }
 
     .about-list {
@@ -120,18 +155,22 @@
     }
 
     .music-links p {
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
 
     a {
       color: var(--text);
       text-decoration: none;
-      border-bottom: 1px solid currentColor;
-      transition: opacity .2s ease;
+      border: 0;
+      background: var(--link-bg);
+      padding: 0.12em 0.32em;
+      border-radius: 0.28em;
+      transition: background .2s ease, opacity .2s ease;
     }
 
     a:hover {
-      opacity: .62;
+      background: var(--link-bg-hover);
+      opacity: .9;
     }
 
     footer {
@@ -147,10 +186,18 @@
         padding: 52px 24px;
       }
 
-      .pattern-strip {
+      .pattern-wrap {
         height: 150px;
-        background-size: auto 150px;
         margin-bottom: 88px;
+      }
+
+      .pattern-wrap::before,
+      .pattern-wrap::after {
+        height: 44px;
+      }
+
+      .pattern-strip {
+        background-size: auto 150px;
       }
 
       section {
@@ -176,7 +223,9 @@
 
   </div>
 
-  <div class="pattern-strip"></div>
+  <div class="pattern-wrap">
+    <div class="pattern-strip"></div>
+  </div>
 
   <div class="container">
 
@@ -212,7 +261,6 @@
 
     <section>
       <div class="section-title">articles</div>
-
       <p class="placeholder">
         selected articles and interviews coming soon
       </p>
@@ -220,7 +268,6 @@
 
     <section>
       <div class="section-title">gallery</div>
-
       <p class="placeholder">
         photos coming soon
       </p>
@@ -246,8 +293,8 @@
 
     <footer>
       contact:
-      <a href="mailto:samsongergo@gmail.com">
-        samsongergo@gmail.com
+      <a href="mailto:hello@gergelysamson.com">
+        hello@gergelysamson.com
       </a>
     </footer>
 
