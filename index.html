@@ -9,9 +9,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #e7e4df;
+      --bg: #dddad4;
       --text: #2f2f2f;
-      --muted: #6a6a6a;
+      --muted: #666666;
       --accent: #6f3b43;
       --link-bg: rgba(111,59,67,.08);
       --link-hover: rgba(111,59,67,.16);
@@ -38,8 +38,8 @@
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
+      align-items: flex-end;
+      text-align: right;
       min-height: 100vh;
       justify-content: center;
     }
@@ -49,6 +49,7 @@
       margin-bottom: 48px;
     }
     h1 {
+      font-family: Futura, "Trebuchet MS", sans-serif;
       font-size: clamp(3.5rem, 10vw, 7rem);
       line-height: .9;
       font-weight: 700;
@@ -58,7 +59,7 @@
       margin-bottom: 28px;
     }
     .tagline {
-      max-width: 460px;
+      max-width: 380px;
       font-size: clamp(1.15rem, 2.5vw, 1.45rem);
       color: var(--muted);
       line-height: 1.55;
@@ -68,6 +69,7 @@
       margin-bottom: 110px;
     }
     .section-title {
+      font-family: Futura, "Trebuchet MS", sans-serif;
       font-size: 1.3rem;
       font-weight: 600;
       text-transform: lowercase;
