@@ -3,292 +3,202 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>gergely sámson</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #282117;
-      --bg-soft: #342a1d;
-      --text: #f3e7c8;
-      --muted: rgba(243, 231, 200, 0.68);
-      --link-bg: rgba(243, 231, 200, 0.10);
-      --link-bg-hover: rgba(243, 231, 200, 0.18);
+      --bg: #e7e4df;
+      --text: #2f2f2f;
+      --muted: #6a6a6a;
+      --accent: #6f3b43;
+      --link-bg: rgba(111,59,67,.08);
+      --link-hover: rgba(111,59,67,.16);
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 20% 10%, #3a3021, transparent 34%),
-        radial-gradient(circle at 85% 75%, #2f271b, transparent 38%),
-        linear-gradient(135deg, var(--bg), var(--bg-soft), #211b13);
-      background-size: 160% 160%;
-      background-attachment: fixed;
+      background: var(--bg);
       color: var(--text);
       font-family: "Montserrat", sans-serif;
-      line-height: 1.5;
-      animation: bgShift 24s ease-in-out infinite alternate;
+      line-height: 1.6;
     }
-
-    @keyframes bgShift {
-      0% {
-        background-position: 0% 0%;
-      }
-      100% {
-        background-position: 100% 100%;
-      }
-    }
-
-    .pattern-strip {
-      width: 100vw;
-      height: 180px;
-      background-image: url("IMG_2291.jpeg");
-      background-size: auto 180px;
-      background-repeat: repeat-x;
-      background-position: top center;
-      filter: saturate(.78) contrast(.95) brightness(.88);
-    }
-
     .container {
       max-width: 760px;
       margin: 0 auto;
-      padding: 64px 28px;
+      padding: 72px 32px;
     }
-
     .hero {
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      text-align: right;
-      padding-top: 72px;
-      padding-bottom: 88px;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
+      justify-content: center;
     }
-
-    h1,
-    .section-title {
-      font-family: "Futura", sans-serif;
-      font-weight: 600;
-      text-transform: lowercase;
-    }
-
-    h1 {
-      font-size: clamp(3rem, 9vw, 6rem);
-      letter-spacing: -0.06em;
-      line-height: 0.95;
-      margin-bottom: 32px;
-    }
-
     .portrait {
-      width: min(360px, 72vw);
-      margin-bottom: 32px;
+      width: min(520px, 90vw);
       display: block;
-      filter: contrast(.96) brightness(.92);
+      margin-bottom: 48px;
     }
-
+    h1 {
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      line-height: .9;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: lowercase;
+      letter-spacing: -0.07em;
+      margin-bottom: 28px;
+    }
     .tagline {
+      max-width: 460px;
       font-size: clamp(1.15rem, 2.5vw, 1.45rem);
       color: var(--muted);
-      max-width: 560px;
-      line-height: 1.5;
+      line-height: 1.55;
       font-weight: 400;
     }
-
     section {
-      margin-bottom: 112px;
+      margin-bottom: 110px;
     }
-
     .section-title {
-      font-size: 1.5rem;
-      letter-spacing: 0;
-      margin-bottom: 32px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: lowercase;
       color: var(--text);
+      margin-bottom: 28px;
     }
-
     .about-list {
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 24px;
     }
-
     .about-item {
       font-size: 1.08rem;
-      line-height: 1.6;
-      font-weight: 400;
+      line-height: 1.65;
       color: var(--text);
     }
-
     .placeholder,
     .music-links {
       color: var(--muted);
-      font-size: 1rem;
-      font-weight: 400;
     }
-
     .music-links p {
-      margin-bottom: 14px;
+      margin-bottom: 16px;
     }
-
     a {
-      color: var(--text);
+      color: var(--accent);
       text-decoration: none;
       background: var(--link-bg);
-      padding: 0.12em 0.34em;
-      border-radius: 0.28em;
-      transition: background .2s ease, opacity .2s ease;
+      padding: .12em .35em;
+      border-radius: .3em;
+      transition: .2s;
     }
-
     a:hover {
-      background: var(--link-bg-hover);
-      opacity: .9;
+      background: var(--link-hover);
     }
-
     footer {
       color: var(--muted);
-      font-size: .95rem;
-      font-weight: 400;
-      padding-bottom: 32px;
+      padding-bottom: 40px;
     }
-
     @media (max-width: 768px) {
-      .pattern-strip {
-        height: 130px;
-        background-size: auto 130px;
-      }
-
       .container {
-        padding: 52px 24px;
+        padding: 56px 24px;
       }
-
       .hero {
-        align-items: flex-end;
-        text-align: right;
-        padding-top: 56px;
-        padding-bottom: 72px;
+        min-height: auto;
+        padding-top: 24px;
       }
-
       .portrait {
-        width: min(320px, 78vw);
-        margin-bottom: 28px;
+        width: min(420px, 92vw);
+        margin-bottom: 36px;
       }
-
-      section {
-        margin-bottom: 88px;
+      h1 {
+        font-size: 4.5rem;
       }
-
-      .section-title {
-        font-size: 1.35rem;
+      .tagline {
+        max-width: 320px;
       }
-
       .about-item {
         font-size: 1rem;
-        line-height: 1.55;
       }
     }
   </style>
 </head>
-
 <body>
-
-  <div class="pattern-strip"></div>
-
   <div class="container hero">
-    <h1>gergely sámson</h1>
-
-    <img class="portrait" src="att.iY2LI04NoJuKCrwOyjpoKzjHEIy6GcUcPEnewTytOSw.jpeg" alt="portrait of gergely sámson">
-
-    <p class="tagline">
-      bringing people together through languages, wine and music
+<img
+  class="portrait"
+  src="att.iY2LI04NoJuKCrwOyjpoKzjHEIy6GcUcPEnewTytOSw.jpeg"
+  alt="portrait of gergely sámson">
+<h1>gergely sámson</h1>
+<p class="tagline">
+  bringing people together through languages, wine and music
+</p>
+  </div>
+  <div class="container">
+<section>
+  <div class="section-title">about</div>
+  <div class="about-list">
+    <div class="about-item">
+      hungarian–portuguese communication:
+      education, translation & interpretation
+    </div>
+    <div class="about-item">
+      wset level 3 wine specialist
+      with 15+ years of experience
+    </div>
+    <div class="about-item">
+      native hungarian speaker /
+      fluent in portuguese, english, spanish & italian
+    </div>
+    <div class="about-item">
+      electronic music producer as
+      <a href="https://coneqt.art">coneqt</a>
+    </div>
+    <div class="about-item">
+      msc in meteorology
+    </div>
+  </div>
+</section>
+<section>
+  <div class="section-title">articles</div>
+  <p class="placeholder">
+    selected articles and interviews coming soon
+  </p>
+</section>
+<section>
+  <div class="section-title">gallery</div>
+  <p class="placeholder">
+    photos coming soon
+  </p>
+</section>
+<section>
+  <div class="section-title">music</div>
+  <div class="music-links">
+    <p>
+      <a href="https://open.spotify.com/artist/5SNtGsNIzAGfQKiRK1zKVD?si=UCqJ0dHbTdmjeR-0sQeeaw">
+        listen to my music
+      </a>
+    </p>
+    <p>
+      <a href="https://coneqt.art">
+        coneqt.art
+      </a>
     </p>
   </div>
-
-  <div class="container">
-
-    <section>
-      <div class="section-title">about</div>
-
-      <div class="about-list">
-        <div class="about-item">
-          hungarian–portuguese communication:
-          education, translation & interpretation
-        </div>
-
-        <div class="about-item">
-          wset level 3 wine specialist
-          with 15+ years of experience
-        </div>
-
-        <div class="about-item">
-          native hungarian speaker /
-          fluent in portuguese, english, spanish & italian
-        </div>
-
-        <div class="about-item">
-          electronic music producer as
-          <a href="https://coneqt.art">coneqt</a>
-        </div>
-
-        <div class="about-item">
-          msc in meteorology
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="section-title">articles</div>
-
-      <p class="placeholder">
-        selected articles and interviews coming soon
-      </p>
-    </section>
-
-    <section>
-      <div class="section-title">gallery</div>
-
-      <p class="placeholder">
-        photos coming soon
-      </p>
-    </section>
-
-    <section>
-      <div class="section-title">music</div>
-
-      <div class="music-links">
-        <p>
-          <a href="https://open.spotify.com/artist/5SNtGsNIzAGfQKiRK1zKVD?si=UCqJ0dHbTdmjeR-0sQeeaw">
-            listen to my music
-          </a>
-        </p>
-
-        <p>
-          <a href="https://coneqt.art">
-            coneqt.art
-          </a>
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      contact:
-      <a href="mailto:hello@gergelysamson.com">
-        hello@gergelysamson.com
-      </a>
-    </footer>
-
+</section>
+<footer>
+  contact:
+  <a href="mailto:hello@gergelysamson.com">
+    hello@gergelysamson.com
+  </a>
+</footer>
   </div>
-
 </body>
 </html>
