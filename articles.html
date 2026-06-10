@@ -1,19 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>gergely sámson</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #c5cac6;
+      --text: #2f2f2f;
+      --muted: #666666;
+      --accent: #6f3b43;
+      --link-bg: rgba(111,59,67,.08);
+      --link-hover: rgba(111,59,67,.16);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Montserrat", sans-serif;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 72px 32px;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      min-height: 100vh;
+      justify-content: center;
+    }
+    .portrait {
+      width: 320px;
+      max-width: 80vw;
+      display: block;
+      margin-bottom: 36px;
+    }
+    h1 {
+      font-family: Futura, "Trebuchet MS", sans-serif;
+      font-size: clamp(2.88rem, 8.1vw, 5.4rem);
+      line-height: 0.82;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: lowercase;
+      letter-spacing: -0.07em;
+      margin-bottom: 28px;
+    }
+    .tagline {
+      max-width: 320px;
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+      color: var(--muted);
+      line-height: 1.55;
+      font-weight: 400;
+    }
+    section {
+      margin-bottom: 110px;
+    }
+    .section-title {
+      font-family: Futura, "Trebuchet MS", sans-serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-transform: lowercase;
+      color: var(--text);
+      margin-bottom: 28px;
+    }
+    .about-list {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+    .about-item {
+      font-size: 1.08rem;
+      line-height: 1.65;
+      color: var(--text);
+    }
+    .placeholder,
+    .music-links {
+      color: var(--muted);
+    }
+    .music-links p {
+      margin-bottom: 16px;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      background: var(--link-bg);
+      padding: .12em .35em;
+      border-radius: .3em;
+      transition: .2s;
+    }
+    a:hover {
+      background: var(--link-hover);
+    }
+    footer {
+      color: var(--muted);
+      padding-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        padding: 56px 24px;
+      }
+      .hero {
+        min-height: auto;
+        padding-top: 24px;
+      }
+      .portrait {
+        width: min(420px, 92vw);
+        margin-bottom: 36px;
+      }
+      h1 {
+        font-size: 4.5rem;
+      }
+      .tagline {
+        max-width: 320px;
+      }
+      .about-item {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
 <h1>articles</h1>
 
 <ul>
   <li>
-    <a href="https://valami.hu/cikk1">
-      title of article
+    <a href="https://kronika.hu/cikk/a-portugal-aki-a-tokaji-bor-hirnevet-oregbiti/">
+      Interview with Ana Carvalho / Porto
     </a>
   </li>
 
   <li>
-    <a href="https://valami.hu/cikk2">
-      title of article
+    <a href="https://mandiner.hu/kulfold/2022/03/portugalia-felkai-piroska-a-mandinernek">
+      Interview with Piroska Felkai / Lisbon
     </a>
   </li>
+
+  <li>
+    <a href="https://kronika.hu/cikk/a-fajdalombol-a-fado-aldast-formal-interju-petkovics-dianaval/">
+      Interview with Diána Petkovics / Budapest-Lisbon
+    </a>
+  </li>
+
+  <li>
+    <a href="https://mandiner.hu/hetilap/2021/09/elet-interju-tiago-sabarigo-jenei-eva-essencia-etterem">
+      Interview with Éva Jenei and Tiago Sabarigo / Essência Restaurant, Budapest
+    </a>
+  </li>
+  
 </ul>
 
 <p>
   <a href="index.html">← back</a>
 </p>
+<footer>
+  contact:
+  <a href="mailto:hello@gergelysamson.com">
+    hello@gergelysamson.com
+  </a>
+</footer>
+  </div>
+</body>
+</html>
