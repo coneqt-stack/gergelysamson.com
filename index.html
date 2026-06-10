@@ -12,8 +12,8 @@
 
   <style>
     :root {
-      --bg: #26231c;
-      --bg-deep: #1e1c17;
+      --bg: #252018;
+      --bg-soft: #31291e;
       --text: #f3e7c8;
       --muted: rgba(243, 231, 200, 0.64);
       --line: rgba(243, 231, 200, 0.16);
@@ -74,63 +74,37 @@
 
     .tagline {
       font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-      color: var(--muted);
+      color: rgba(242,228,189,.72);
       max-width: 560px;
       line-height: 1.55;
       margin-bottom: 72px;
       font-weight: 400;
     }
 
-    .pattern-wrap {
-      position: relative;
-      width: 100vw;
-      height: 220px;
-      margin-bottom: 120px;
-      overflow: hidden;
-    }
-
-    .pattern-wrap::before,
-    .pattern-wrap::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      width: 100%;
-      height: 70px;
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    .pattern-wrap::before {
-      top: 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, rgba(38,35,28,0) 100%);
-    }
-
-    .pattern-wrap::after {
-      bottom: 0;
-      background: linear-gradient(to top, var(--bg) 0%, rgba(38,35,28,0) 100%);
-    }
-
     .pattern-strip {
-      width: 100%;
-      height: 100%;
-      background-image: url("IMG_2291.jpeg");
-      background-size: auto 220px;
-      background-repeat: repeat-x;
-      background-position: center;
-      filter: saturate(0.82) contrast(0.92) brightness(0.88);
-      opacity: 0.92;
-    }
+      width: 100vw;
+      height: 180px;
+
+  background-image: url("IMG_2291.jpeg");
+  background-size: auto 180px;
+  background-repeat: repeat-x;
+  background-position: center;
+
+  filter: saturate(.78) contrast(.95) brightness(.88);
+}
 
     section {
       margin-bottom: 120px;
     }
 
     .section-title {
-      font-size: .78rem;
-      letter-spacing: .22em;
-      text-transform: uppercase;
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: lowercase;
+      letter-spacing: 0;
+      margin-bottom: 32px;
       color: var(--text);
-      margin-bottom: 40px;
     }
 
     .about-list {
@@ -140,11 +114,7 @@
     }
 
     .about-item {
-      padding-bottom: 24px;
-      border-bottom: 1px solid var(--line);
-      font-size: 1.08rem;
-      line-height: 1.75;
-      font-weight: 400;
+      padding-bottom: 8px;
     }
 
     .placeholder,
@@ -213,6 +183,8 @@
 
 <body>
 
+  <div class="pattern-strip"></div>
+
   <div class="container">
 
     <h1>gergely sámson</h1>
@@ -221,10 +193,6 @@
       bringing people together through languages, wine and music
     </p>
 
-  </div>
-
-  <div class="pattern-wrap">
-    <div class="pattern-strip"></div>
   </div>
 
   <div class="container">
