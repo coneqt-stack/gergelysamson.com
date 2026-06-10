@@ -58,6 +58,42 @@
       padding: 64px 28px;
     }
 
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.portrait {
+  width: min(360px, 72vw);
+  margin: 32px 0;
+  display: block;
+  filter: contrast(0.96) brightness(0.92);
+}
+
+.tagline {
+  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.5;
+  margin-bottom: 72px;
+  font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .portrait {
+    width: 100%;
+    max-width: 360px;
+    margin: 28px 0;
+  }
+}
+    
     h1,
     .section-title {
       font-family: "Futura", sans-serif;
@@ -188,17 +224,15 @@
 
 <body>
 
-  <div class="pattern-strip"></div>
+  <div class="container hero">
+  <h1>gergely sámson</h1>
 
-  <div class="container">
+  <img class="portrait" src="att.iY2LI04NoJuKCrwOyjpoKzjHEIy6GcUcPEnewTytOSw.jpeg" alt="portrait of gergely sámson">
 
-    <h1>gergely sámson</h1>
-
-    <p class="tagline">
-      bringing people together through languages, wine and music
-    </p>
-
-  </div>
+  <p class="tagline">
+    bringing people together through languages, wine and music
+  </p>
+</div>
 
   <div class="container">
 
