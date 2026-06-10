@@ -12,11 +12,10 @@
 
   <style>
     :root {
-      --bg: #252018;
-      --bg-soft: #31291e;
+      --bg: #282117;
+      --bg-soft: #342a1d;
       --text: #f3e7c8;
-      --muted: rgba(243, 231, 200, 0.64);
-      --line: rgba(243, 231, 200, 0.16);
+      --muted: rgba(243, 231, 200, 0.68);
       --link-bg: rgba(243, 231, 200, 0.10);
       --link-bg-hover: rgba(243, 231, 200, 0.18);
     }
@@ -32,24 +31,36 @@
     }
 
     body {
+      min-height: 100vh;
       background:
-        radial-gradient(circle at 20% 10%, #343024, transparent 34%),
-        radial-gradient(circle at 85% 75%, #2e281f, transparent 38%),
-        var(--bg);
+        radial-gradient(circle at 20% 10%, #3a3021, transparent 34%),
+        radial-gradient(circle at 85% 75%, #2f271b, transparent 38%),
+        linear-gradient(135deg, var(--bg), var(--bg-soft), #211b13);
+      background-size: 160% 160%;
       background-attachment: fixed;
       color: var(--text);
       font-family: "Montserrat", sans-serif;
-      line-height: 1.45;
-      animation: bgShift 22s ease-in-out infinite alternate;
+      line-height: 1.5;
+      animation: bgShift 24s ease-in-out infinite alternate;
     }
 
     @keyframes bgShift {
       0% {
-        background-position: 0% 0%, 100% 100%;
+        background-position: 0% 0%;
       }
       100% {
-        background-position: 100% 20%, 0% 80%;
+        background-position: 100% 100%;
       }
+    }
+
+    .pattern-strip {
+      width: 100vw;
+      height: 180px;
+      background-image: url("IMG_2291.jpeg");
+      background-size: auto 180px;
+      background-repeat: repeat-x;
+      background-position: top center;
+      filter: saturate(.78) contrast(.95) brightness(.88);
     }
 
     .container {
@@ -58,87 +69,50 @@
       padding: 64px 28px;
     }
 
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  text-align: right;
-}
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+      padding-top: 72px;
+      padding-bottom: 88px;
+    }
 
-.portrait {
-  width: min(360px, 72vw);
-  margin: 32px 0;
-  display: block;
-  filter: contrast(0.96) brightness(0.92);
-}
-
-.tagline {
-  font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-  color: var(--muted);
-  max-width: 560px;
-  line-height: 1.5;
-  margin-bottom: 72px;
-  font-weight: 400;
-}
-
-@media (max-width: 768px) {
-  .hero {
-    align-items: flex-start;
-    text-align: left;
-  }
-
-  .portrait {
-    width: 100%;
-    max-width: 360px;
-    margin: 28px 0;
-  }
-}
-    
     h1,
     .section-title {
-      font-family: "Futura", sans-serif;
+      font-family: "Montserrat", sans-serif;
       font-weight: 600;
+      text-transform: lowercase;
     }
 
     h1 {
       font-size: clamp(3rem, 9vw, 6rem);
       letter-spacing: -0.06em;
       line-height: 0.95;
-      margin-bottom: 28px;
-      text-transform: lowercase;
+      margin-bottom: 32px;
+    }
+
+    .portrait {
+      width: min(360px, 72vw);
+      margin-bottom: 32px;
+      display: block;
+      filter: contrast(.96) brightness(.92);
     }
 
     .tagline {
       font-size: clamp(1.15rem, 2.5vw, 1.45rem);
-      color: rgba(242,228,189,.72);
+      color: var(--muted);
       max-width: 560px;
-      line-height: 1.55;
-      margin-bottom: 72px;
+      line-height: 1.5;
       font-weight: 400;
     }
 
-    .pattern-strip {
-      width: 100vw;
-      height: 180px;
-
-      background-image: url("IMG_2291.jpeg");
-      background-size: auto 180px;
-      background-repeat: repeat-x;
-
-      background-position: top center;
-
-      filter: saturate(.78) contrast(.95) brightness(.88);
-    }
-
     section {
-      margin-bottom: 120px;
+      margin-bottom: 112px;
     }
 
     .section-title {
-      font-family: "Futura", sans-serif;
       font-size: 1.5rem;
-      font-weight: 600;
-      text-transform: lowercase;
       letter-spacing: 0;
       margin-bottom: 32px;
       color: var(--text);
@@ -147,15 +121,14 @@
     .about-list {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 28px;
     }
 
     .about-item {
-      padding-bottom: 8px;
       font-size: 1.08rem;
-      line-height: 1.75;
+      line-height: 1.6;
       font-weight: 400;
-      color: var(--muted);
+      color: var(--text);
     }
 
     .placeholder,
@@ -172,9 +145,8 @@
     a {
       color: var(--text);
       text-decoration: none;
-      border: 0;
       background: var(--link-bg);
-      padding: 0.12em 0.32em;
+      padding: 0.12em 0.34em;
       border-radius: 0.28em;
       transition: background .2s ease, opacity .2s ease;
     }
@@ -185,38 +157,45 @@
     }
 
     footer {
-      border-top: 1px solid var(--line);
-      padding-top: 24px;
       color: var(--muted);
       font-size: .95rem;
       font-weight: 400;
+      padding-bottom: 32px;
     }
 
     @media (max-width: 768px) {
+      .pattern-strip {
+        height: 130px;
+        background-size: auto 130px;
+      }
+
       .container {
         padding: 52px 24px;
       }
 
-      .pattern-wrap {
-        height: 150px;
-        margin-bottom: 88px;
+      .hero {
+        align-items: flex-end;
+        text-align: right;
+        padding-top: 56px;
+        padding-bottom: 72px;
       }
 
-      .pattern-wrap::before,
-      .pattern-wrap::after {
-        height: 44px;
-      }
-
-      .pattern-strip {
-        background-size: auto 150px;
+      .portrait {
+        width: min(320px, 78vw);
+        margin-bottom: 28px;
       }
 
       section {
         margin-bottom: 88px;
       }
 
+      .section-title {
+        font-size: 1.35rem;
+      }
+
       .about-item {
         font-size: 1rem;
+        line-height: 1.55;
       }
     }
   </style>
@@ -224,15 +203,17 @@
 
 <body>
 
+  <div class="pattern-strip"></div>
+
   <div class="container hero">
-  <h1>gergely sámson</h1>
+    <h1>gergely sámson</h1>
 
-  <img class="portrait" src="att.iY2LI04NoJuKCrwOyjpoKzjHEIy6GcUcPEnewTytOSw.jpeg" alt="portrait of gergely sámson">
+    <img class="portrait" src="portrait.jpg" alt="portrait of gergely sámson">
 
-  <p class="tagline">
-    bringing people together through languages, wine and music
-  </p>
-</div>
+    <p class="tagline">
+      bringing people together through languages, wine and music
+    </p>
+  </div>
 
   <div class="container">
 
@@ -268,6 +249,7 @@
 
     <section>
       <div class="section-title">articles</div>
+
       <p class="placeholder">
         selected articles and interviews coming soon
       </p>
@@ -275,6 +257,7 @@
 
     <section>
       <div class="section-title">gallery</div>
+
       <p class="placeholder">
         photos coming soon
       </p>
