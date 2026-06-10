@@ -8,15 +8,15 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-
     :root {
-      --bg: #f5f3ee;
-      --text: #1d1d1d;
-      --muted: #7f7f7f;
-      --line: rgba(0,0,0,.08);
+      --bg: #191817;
+      --bg2: #25211d;
+      --text: #f3e7c8;
+      --muted: rgba(243, 231, 200, 0.62);
+      --line: rgba(243, 231, 200, 0.14);
     }
 
     * {
@@ -30,44 +30,57 @@
     }
 
     body {
-      background: var(--bg);
+      background:
+        radial-gradient(circle at 20% 10%, var(--bg2), transparent 34%),
+        radial-gradient(circle at 80% 70%, #2b261f, transparent 38%),
+        var(--bg);
+      background-attachment: fixed;
       color: var(--text);
-      font-family: "Inter", sans-serif;
+      font-family: "Montserrat", sans-serif;
       line-height: 1.6;
+      animation: bgShift 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgShift {
+      0% {
+        background-position: 0% 0%, 100% 100%;
+      }
+      100% {
+        background-position: 100% 20%, 0% 80%;
+      }
     }
 
     .container {
       max-width: 760px;
       margin: 0 auto;
-      padding: 60px 28px;
+      padding: 64px 28px;
     }
 
     h1 {
       font-size: clamp(3rem, 9vw, 6rem);
-      font-weight: 300;
-      letter-spacing: -0.05em;
-      line-height: 0.9;
-      margin-bottom: 24px;
+      font-weight: 600;
+      letter-spacing: -0.06em;
+      line-height: 0.95;
+      margin-bottom: 28px;
       text-transform: lowercase;
     }
 
     .tagline {
-      font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+      font-size: clamp(1.15rem, 2.5vw, 1.45rem);
       color: var(--muted);
-      max-width: 520px;
-      line-height: 1.5;
-      margin-bottom: 70px;
+      max-width: 560px;
+      line-height: 1.55;
+      margin-bottom: 72px;
+      font-weight: 400;
     }
 
     .pattern-strip {
       width: 100vw;
       height: 220px;
-
-      margin-left: calc(50% - 50vw);
       margin-bottom: 120px;
 
       background-image: url("IMG_2291.jpeg");
-      background-size: 320px auto;
+      background-size: auto 220px;
       background-repeat: repeat-x;
       background-position: center;
     }
@@ -77,12 +90,12 @@
     }
 
     .section-title {
-      font-size: .8rem;
-      letter-spacing: .18em;
+      font-size: .78rem;
+      letter-spacing: .22em;
       text-transform: uppercase;
-      color: var(--muted);
+      color: var(--text);
       margin-bottom: 40px;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .about-list {
@@ -94,23 +107,31 @@
     .about-item {
       padding-bottom: 24px;
       border-bottom: 1px solid var(--line);
-      font-size: 1.15rem;
-      line-height: 1.7;
+      font-size: 1.08rem;
+      line-height: 1.75;
+      font-weight: 400;
     }
 
-    .placeholder {
+    .placeholder,
+    .music-links {
       color: var(--muted);
       font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .music-links p {
+      margin-bottom: 12px;
     }
 
     a {
-      color: inherit;
+      color: var(--text);
       text-decoration: none;
       border-bottom: 1px solid currentColor;
+      transition: opacity .2s ease;
     }
 
     a:hover {
-      opacity: .6;
+      opacity: .62;
     }
 
     footer {
@@ -118,29 +139,28 @@
       padding-top: 24px;
       color: var(--muted);
       font-size: .95rem;
+      font-weight: 400;
     }
 
     @media (max-width: 768px) {
-
       .container {
-        padding: 48px 24px;
+        padding: 52px 24px;
       }
 
       .pattern-strip {
-        height: 140px;
-        background-size: 220px auto;
-        margin-bottom: 80px;
+        height: 150px;
+        background-size: auto 150px;
+        margin-bottom: 88px;
       }
 
       section {
-        margin-bottom: 80px;
+        margin-bottom: 88px;
       }
 
       .about-item {
-        font-size: 1.05rem;
+        font-size: 1rem;
       }
     }
-
   </style>
 </head>
 
@@ -161,11 +181,9 @@
   <div class="container">
 
     <section>
-
       <div class="section-title">about</div>
 
       <div class="about-list">
-
         <div class="about-item">
           hungarian–portuguese communication:
           education, translation & interpretation
@@ -189,49 +207,48 @@
         <div class="about-item">
           msc in meteorology
         </div>
-
       </div>
-
     </section>
 
     <section>
-
       <div class="section-title">articles</div>
 
       <p class="placeholder">
         selected articles and interviews coming soon
       </p>
-
     </section>
 
     <section>
-
       <div class="section-title">gallery</div>
 
       <p class="placeholder">
         photos coming soon
       </p>
-
     </section>
 
     <section>
-
       <div class="section-title">music</div>
 
-      <p>
-        listen at
-        <a href="https://coneqt.art">coneqt.art</a>
-      </p>
+      <div class="music-links">
+        <p>
+          <a href="https://open.spotify.com/artist/5SNtGsNIzAGfQKiRK1zKVD?si=UCqJ0dHbTdmjeR-0sQeeaw">
+            listen to my music
+          </a>
+        </p>
 
+        <p>
+          <a href="https://coneqt.art">
+            coneqt.art
+          </a>
+        </p>
+      </div>
     </section>
 
     <footer>
-
       contact:
       <a href="mailto:samsongergo@gmail.com">
         samsongergo@gmail.com
       </a>
-
     </footer>
 
   </div>
